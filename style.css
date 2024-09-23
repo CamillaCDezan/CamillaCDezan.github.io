@@ -1,0 +1,280 @@
+:root {
+    --color-primary: #086405;
+    --color-secondary: #6f9b6f;
+    --color-background: rgb(226, 225, 224);
+    --color-text: #333;
+    --color-white: #fff;
+    --color-footer-background: #6f9b6f;
+    --color-footer-text: #fff;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-background);
+    font-size: 16px;
+    color: var(--color-text);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+/* Navbar e Footer */
+.navbar, .footer {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 10px;
+    width: 100%;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: auto;
+}
+
+/* Links da Navbar */
+.navbar .nav-link {
+    color: var(--color-white);
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover, .navbar .nav-link:focus {
+    color: #F2A200;
+}
+
+/* Botão e logo na mesma linha */
+.navbar .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+    z-index: 1001;
+    margin-left: 0;
+    position: static;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Ajuste do tamanho da logo */
+.logo-etec, .logo-cooperativa {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    height: 80px; /* Aumenta o tamanho da logo */
+    z-index: 1001;
+    margin-right: 10px;
+}
+
+@media (max-width: 575.98px) {
+    .logo-etec, .logo-cooperativa {
+        height: 70px; /* Ajuste do tamanho em telas menores */
+    }
+
+    .navbar {
+        justify-content: flex-start;
+        padding-left: 10px;
+    }
+
+    .navbar-toggler {
+        margin-right: auto;
+    }
+}
+
+/* Container geral */
+.containeri {
+    flex: 1;
+    width: 100%;
+    padding-top: 120px;
+}
+
+/* Layout de cartões */
+.cards-ag {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cards-ag .card {
+    width: 100%;
+    max-width: 25rem;
+    margin: 20px;
+    text-align: center;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cards-ag .card img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.cards-ag .card-body {
+    padding: 10px;
+}
+
+@media (max-width: 575.98px) {
+    .cards-ag .card {
+        width: 100%;
+    }
+}
+
+/* Títulos */
+h1, h2 {
+    color: #086405;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after, h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: var(--color-primary);
+    margin: 10px auto 0;
+}
+
+/* Seções de cartão */
+.card-section {
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-section h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.card-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Página de produtos */
+.page-produtos h2 {
+    font-size: 2.5rem;
+    border-bottom: 4px solid var(--color-primary);
+    padding-bottom: 10px;
+}
+
+.page-produtos .cards-ag .card {
+    max-width: 300px;
+    background-color: var(--color-white);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-produtos .cards-ag .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.page-produtos .cards-ag .card img {
+    height: 200px;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.page-produtos .card-title {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.page-produtos .btn-whatsapp {
+    background-color: var(--color-primary);
+    border: none;
+    color: var(--color-white);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.page-produtos .btn-whatsapp:hover {
+    background-color: var(--color-primary);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 767.98px) {
+    .row-content {
+        flex-direction: column;
+    }
+
+    .col-left, .col-right {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px; /* Espaçamento superior opcional */
+}
+
+/* Define a mesma cor para todos os títulos */
+h1, h2, h5 {
+    color: var(--color-primary); /* ou outra cor que preferir */
+}
+
+/* Ou, se você quiser uma cor específica */
+h1, h2, h5 {
+    color: #086405; /* Mesma cor usada para "text-success" */
+}
+
+/* Altera a ordem dos elementos em telas pequenas */
+@media (max-width: 575.98px) {
+    .row-content {
+        display: flex;
+        flex-direction: column-reverse; /* Reverte a ordem das colunas para imagens abaixo dos textos */
+    }
+
+    .row-content .col-md-6 {
+        margin-bottom: 20px; /* Adiciona um espaço entre os blocos */
+    }
+
+    /* Para manter o padrão intercalado, quando necessário */
+    .row-content:nth-child(even) {
+        flex-direction: column;
+    }
+}
